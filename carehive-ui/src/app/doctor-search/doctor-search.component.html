@@ -1,0 +1,25 @@
+<div>
+    <label for="npiSearch">Search NPI:</label>
+    <input
+      id="npiSearch"
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Enter search terms"
+    />
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let result of filteredResults$ | async">
+        <div>
+          <strong>{{ result[0] }}</strong>
+        </div>
+        <div>{{ result[1] }}</div>
+        <div>{{ result[2] }}</div>
+        <div>{{ result[3] }}</div>
+        <!-- <div><a href="http://maps.google.com/maps?q=${encodeURI(
+                AutocompleteData.Practice  
+                )}"></a>{{ result[4] }}</div> -->
+        <br />
+      </li>
+    </ul>
+  </div>
