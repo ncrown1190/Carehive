@@ -12,7 +12,7 @@ export class NpiService {
   constructor(private http: HttpClient) {}
 
   searchNpi(term: string): Observable<any[]> {
-    return this.http.get<any>(this.apiUrl, { params: { term: term } }).pipe(
+    return this.http.get<any>(this.apiUrl, { params: { terms: term } }).pipe(
       map((response: any) => response[3]) // Extract the table data
     );
   }
