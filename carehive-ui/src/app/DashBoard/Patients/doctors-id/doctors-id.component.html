@@ -1,0 +1,25 @@
+<div class="list-div">
+  <h3>List of available doctors</h3>
+  <div *ngFor="let doctor of doctors" class="doctor-list-div">
+    <ul>
+      <li>
+        <div class="picture">
+          <div class="pic-div">Picture</div>
+          <div class="info-doc">
+            <p>Doctor's Name: {{ doctor.userName }}</p>
+            <p>Speciality: {{ doctor.specialty }}</p>
+            <p>Phone: {{ doctor.phone }}</p>
+          </div>
+        </div>
+
+        <!-- <p>
+          ID: {{ doctor.doctorId }} Name: {{ doctor.userName }} Speciality:
+          {{ doctor.specialty }}
+        </p> -->
+        <!-- <p>{{ doctor.userId }}</p>
+        <p></p>
+        <p></p> -->
+      </li>
+    </ul>
+  </div>
+</div>

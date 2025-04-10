@@ -1,4 +1,23 @@
-<nav>
-  <a routerLink="/doctorSearch">Search Doctor</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="main">
+  <div class="header">
+    <img [src]="imgUrl" />
+    <h1 class="heading">Welcome to CareHieve</h1>
+    <div class="side-bar-container">
+      <!-- <i class="fa-solid fa-bars"></i> -->
+      <div class="side-bar-menu">
+        <nav>
+          <a routerLink="availableDoctor">Find a Doctor</a>
+          <a routerLink="patientDashboard">Patients Portal</a>
+          <a routerLink="doctorDashboard">Doctors Portal</a>
+          <a routerLink="/doctorSearch">Search Doctor</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <h3>Find your Doctor and make an oppintment today.</h3>
+    <div CLASS="outer-div">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

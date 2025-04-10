@@ -1,0 +1,40 @@
+<form [formGroup]="appointmentForm" (submit)="onSubmit()">
+    <div>
+        <label for="patientId">Patient Id: </label>
+        <input type="number" id="patientId" formControlName="patientId">
+        <div *ngIf="appointmentForm.get('patientId')?.invalid && appointmentForm.get('patientId')?.touched">
+            <p>Patient Id is required</p>
+        </div>
+    </div>
+
+    <div>
+        <label for="doctorId">Doctor Id: </label>
+        <input type="number" id="doctorId" formControlName="doctorId">
+        <div *ngIf="appointmentForm.get('doctorId')?.invalid && appointmentForm.get('doctorId')?.touched">
+            <p>Doctor Id is required</p>
+        </div>
+    </div>
+
+    <div>
+        <label for="appointmentDate">Appointment Date: </label>
+        <input type="date" id="appointmentDate" formControlName="appointmentDate">
+        <div *ngIf="appointmentForm.get('appointmentDate')?.invalid && appointmentForm.get('appointmentDate')?.touched">
+            <p>Date is required</p>
+        </div>
+    </div>
+
+    <div>
+        <label for="appointmentTime">Appointment Time: </label>
+        <input type="time" id="appointmentTime" formControlName="appointmentTime">
+        <div *ngIf="appointmentForm.get('appointmentTime')?.invalid && appointmentForm.get('appointmentTime')?.touched">
+            <p>Time is required</p>
+        </div>
+    </div>
+
+    <div>
+        <label for="status">Status: </label>
+        <input type="text" id="status" formControlName="status">
+       
+    </div>
+    <button type="submit" [disabled]="appointmentForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,30 @@
+.ext-search-main {
+  /* padding: 60px; */
+  position: relative;
+  top: 60px;
+}
+
+.ext-search-input {
+  display: flex;
+  justify-content: center;
+}
+.ext-search-input label {
+  align-items: center;
+  padding: 5px;
+}
+.ext-search-input input {
+  padding: 5px;
+  border-radius: 5px;
+}
+li {
+  list-style: none;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  padding: 15px;
+  width: 80%;
+  border-radius: 5px;
+  margin: 10px;
+  color: #002855;
+}
+.info-div {
+  padding-left: 15px;
+}
