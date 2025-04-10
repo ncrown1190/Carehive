@@ -1,0 +1,32 @@
+<div class="app-div">
+  <h3>Search Appointments</h3>
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="doctorName"
+      placeholder="Enter Doctor Name"
+    />
+    <button (click)="fetchDocAppointments()">Search</button>
+  </div>
+</div>
+<div *ngIf="appointments.length > 0" class="doc-app-list">
+  <h4>Doctor {{this.doctorName}}'s Appointments List:</h4>
+  <div *ngFor="let appointment of appointments">
+    <ul>
+      <li>
+        <p>
+          <span>Doctor: {{ appointment.doctorName }}</span>   
+          <!-- <span>Doctor: {{ appointment.doctorName }}</span>   ID: {{ appointment.doctorId }} -->
+        </p>
+        <p>
+          Patient: {{ appointment.patientName }} 
+          <!-- Patient: {{ appointment.patientName }} ID: {{ appointment.patientId }} -->
+        </p>
+        <p>
+          Date: {{ appointment.appointmentDate }} Time:
+          {{ appointment.appointmentTime }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>

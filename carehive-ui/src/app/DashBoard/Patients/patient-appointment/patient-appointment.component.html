@@ -1,0 +1,29 @@
+<div>
+    <h4>Appointments for {{this.patientName}}</h4>
+    <input
+      type="text"
+      [(ngModel)]="patientName"
+      placeholder="Enter Patient Name"
+    />
+    <button (click)="fetchAppointments()">Search</button>
+  </div>
+  <div *ngIf="appointments.length > 0">
+    <h3>Appointments:</h3>
+    <div *ngFor="let appointment of appointments">
+      <ul>
+        <li>
+          <p>
+            Patient: {{ appointment.patientName }} ID: {{ appointment.patientId }}
+          </p>
+          <p>
+            Doctor: {{ appointment.doctorName }} ID: {{ appointment.doctorId }}
+          </p>
+          <p>
+            {{ appointment.appointmentDate }} Time:
+            {{ appointment.appointmentTime }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

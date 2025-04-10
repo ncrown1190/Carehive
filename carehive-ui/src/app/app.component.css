@@ -1,0 +1,127 @@
+.main {
+  background-color: #ffffff;
+  height: 150vh;
+  margin: 0px;
+}
+.header {
+  /* background-color: #4e9bdf; */
+  background-color: #002448;
+  border-radius: 7px;
+  height: 145px;
+  align-content: center;
+  padding: 15px;
+  box-shadow: 0 0 5px 1px rgb(50, 50, 50);
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width: 97%;
+}
+.heading {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: 45px;
+  color: #ffffffe8;
+  padding-bottom: 20px;
+}
+.body {
+  margin-top: 166px;
+}
+h3 {
+  margin: 0px;
+  font-size: 20px;
+  color: #002855;
+  display: flex;
+  justify-content: center;
+  left: 30%;
+  position: fixed;
+  padding: 25px;
+  background-color: aliceblue;
+}
+
+.side-bar-menu {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  padding-right: 15px;
+  font-size: 10px;
+}
+
+.side-bar-container a {
+  display: flex;
+  justify-content: stretch;
+  margin: 5px;
+  color: #052347;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* .fa-bars {
+  color: white;
+  font-size: 25px;
+  text-shadow: 4px 4px 5px #979595;
+  position: absolute;
+  right: 30px;
+  top: 80px;
+  z-index: 200;
+  position: fixed;
+} */
+
+/* .side-bar-menu {
+  background-color: #5498dcbf;
+  box-shadow: 0px 10px 10px #979595;
+} */
+
+/* .side-bar-container ul {
+  list-style: none;
+  text-align: right;
+  margin-right: 30px;
+} */
+
+/* .side-bar-container a {
+  text-decoration: none;
+  color: #fff;
+  text-align: right;
+  font-size: 25px;
+  font-weight: 100px;
+  line-height: 30px;
+} */
+
+/* .side-bar-container a:hover {
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+} */
+
+/* .side-bar-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 18px;
+  padding: 20px 0px 10px 30px;
+  transform: translateX(1em);
+  transition: all 0.2s ease-in-out 0.5s;
+  border-radius: 5px;
+  margin-top: 20px;
+  position: fixed;
+} */
+
+/* .side-bar-container:hover .side-bar-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0%);
+  transition-delay: 0s, 0s, 0.5s;
+  z-index: 1;
+} */
+
+/* .temp{
+    background-color: #c6aa8a;
+     z-index: -1;
+} */

@@ -32,12 +32,8 @@ public partial class AppointmentDbContext : DbContext
     {
         modelBuilder.Entity<Appointment>(entity =>
         {
-            entity.HasKey(e => e.AppointmentId).HasName("PK__Appointm__8ECDFCC20130A5C1");
+            entity.HasKey(e => e.AppointmentId).HasName("PK__Appointm__8ECDFCC2608640F7");
 
-            entity.Property(e => e.AppointmentDateTime).HasColumnType("datetime");
-            entity.Property(e => e.CreatedDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
             entity.Property(e => e.Status)
                 .HasMaxLength(50)
                 .HasDefaultValue("Pending");
@@ -45,35 +41,31 @@ public partial class AppointmentDbContext : DbContext
             entity.HasOne(d => d.Doctor).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.DoctorId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Appointme__Docto__4316F928");
+                .HasConstraintName("FK__Appointme__Docto__656C112C");
 
             entity.HasOne(d => d.Patient).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.PatientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Appointme__Patie__4222D4EF");
+                .HasConstraintName("FK__Appointme__Patie__6477ECF3");
         });
 
         modelBuilder.Entity<Doctor>(entity =>
         {
-            entity.HasKey(e => e.DoctorId).HasName("PK__Doctors__2DC00EBF2A7D13BE");
+            entity.HasKey(e => e.DoctorId).HasName("PK__Doctors__2DC00EBF2810FD54");
 
-            entity.HasIndex(e => e.Email, "UQ__Doctors__A9D10534A5DFECCA").IsUnique();
+            entity.HasIndex(e => e.UserId, "UQ__Doctors__1788CC4DEC9F8667").IsUnique();
 
-            entity.Property(e => e.AvailabilityStatus)
-                .HasMaxLength(50)
-                .HasDefaultValue("Available");
-            entity.Property(e => e.CreatedDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.Email).HasMaxLength(100);
-            entity.Property(e => e.FullName).HasMaxLength(100);
-            entity.Property(e => e.PhoneNumber).HasMaxLength(15);
             entity.Property(e => e.Specialty).HasMaxLength(100);
+
+            entity.HasOne(d => d.User).WithOne(p => p.Doctor)
+                .HasForeignKey<Doctor>(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Doctors__UserId__60A75C0F");
         });
 
         modelBuilder.Entity<Payment>(entity =>
         {
-            entity.HasKey(e => e.PaymentId).HasName("PK__Payments__9B556A38523C28A2");
+            entity.HasKey(e => e.PaymentId).HasName("PK__Payments__9B556A38327ABDF3");
 
             entity.Property(e => e.Amount).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.PaymentDate)
@@ -86,36 +78,34 @@ public partial class AppointmentDbContext : DbContext
             entity.HasOne(d => d.Appointment).WithMany(p => p.Payments)
                 .HasForeignKey(d => d.AppointmentId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Payments__Appoin__4BAC3F29");
+                .HasConstraintName("FK__Payments__Appoin__6D0D32F4");
         });
 
         modelBuilder.Entity<Schedule>(entity =>
         {
-            entity.HasKey(e => e.ScheduleId).HasName("PK__Schedule__9C8A5B49D920A7B0");
+            entity.HasKey(e => e.ScheduleId).HasName("PK__Schedule__9C8A5B499A9E8466");
 
-            entity.Property(e => e.IsAvailable).HasDefaultValue(true);
+            entity.Property(e => e.ScheduleDate).HasColumnName("scheduleDate");
 
             entity.HasOne(d => d.Doctor).WithMany(p => p.Schedules)
                 .HasForeignKey(d => d.DoctorId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Schedules__Docto__46E78A0C");
+                .HasConstraintName("FK__Schedules__Docto__68487DD7");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CF49BB5D1");
-
-            entity.HasIndex(e => e.Email, "UQ__Users__A9D10534E730C87C").IsUnique();
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CECD29F52");
 
             entity.Property(e => e.Address).HasMaxLength(255);
             entity.Property(e => e.CreatedDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(100);
-            entity.Property(e => e.FullName).HasMaxLength(100);
-            entity.Property(e => e.Password).HasMaxLength(255);
-            entity.Property(e => e.PhoneNumber).HasMaxLength(15);
+            entity.Property(e => e.LoginId).HasMaxLength(50);
+            entity.Property(e => e.Phone).HasMaxLength(15);
             entity.Property(e => e.Role).HasMaxLength(50);
+            entity.Property(e => e.UserName).HasMaxLength(100);
         });
 
         OnModelCreatingPartial(modelBuilder);

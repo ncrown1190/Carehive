@@ -1,4 +1,5 @@
-<div>
+<div class="ext-search-main">
+  <div class="ext-search-input">
     <label for="npiSearch">Search NPI:</label>
     <input
       id="npiSearch"
@@ -7,19 +8,21 @@
       placeholder="Enter search terms"
     />
   </div>
-  <div>
+  <div class="ext-search-div">
     <ul>
-      <li *ngFor="let result of filteredResults$ | async">
-        <div>
-          <strong>{{ result[0] }}</strong>
+      <li *ngFor="let result of filteredResults$ | async; let i = index">
+        <div class="ext-doc-name">
+          <strong>{{ i + 1 }}. {{ result[0] }}</strong>
         </div>
-        <div>{{ result[1] }}</div>
-        <div>{{ result[2] }}</div>
-        <div>{{ result[3] }}</div>
+        <div class="info-div">
+          <div class="npi-num">NPI Registry: {{ result[1] }}</div>
+          <div class="ext-spec">Speciality: {{ result[2] }}</div>
+          <div class="ext-address">Address: {{ result[3] }}</div>
+        </div>
         <!-- <div><a href="http://maps.google.com/maps?q=${encodeURI(
                 AutocompleteData.Practice  
                 )}"></a>{{ result[4] }}</div> -->
-        <br />
       </li>
     </ul>
   </div>
+</div>
