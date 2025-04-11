@@ -1,5 +1,8 @@
+<div class="container">
+    <div class="left-column">     
+
 <form [formGroup]="appointmentForm" (submit)="onSubmit()">
-    <div>
+    <div class="label-input-div">
         <label for="patientId">Patient Id: </label>
         <input type="number" id="patientId" formControlName="patientId">
         <div *ngIf="appointmentForm.get('patientId')?.invalid && appointmentForm.get('patientId')?.touched">
@@ -7,7 +10,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="label-input-div">
         <label for="doctorId">Doctor Id: </label>
         <input type="number" id="doctorId" formControlName="doctorId">
         <div *ngIf="appointmentForm.get('doctorId')?.invalid && appointmentForm.get('doctorId')?.touched">
@@ -15,7 +18,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="label-input-div">
         <label for="appointmentDate">Appointment Date: </label>
         <input type="date" id="appointmentDate" formControlName="appointmentDate">
         <div *ngIf="appointmentForm.get('appointmentDate')?.invalid && appointmentForm.get('appointmentDate')?.touched">
@@ -23,7 +26,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="label-input-div">
         <label for="appointmentTime">Appointment Time: </label>
         <input type="time" id="appointmentTime" formControlName="appointmentTime">
         <div *ngIf="appointmentForm.get('appointmentTime')?.invalid && appointmentForm.get('appointmentTime')?.touched">
@@ -31,10 +34,12 @@
         </div>
     </div>
 
-    <div>
+    <div class="label-input-div">
         <label for="status">Status: </label>
         <input type="text" id="status" formControlName="status">
        
     </div>
     <button type="submit" [disabled]="appointmentForm.invalid">Submit</button>
 </form>
+</div>
+</div>

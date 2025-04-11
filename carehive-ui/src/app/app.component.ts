@@ -9,5 +9,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'carehive-ui';
-  imgUrl = '../images/stethoscope.png';
+  imgPath = '../images/stethoscope.png';
 }

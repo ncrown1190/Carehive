@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+    background-color: aliceblue;
+    height: 400px;
+}
+label {
+  font-size: 20px;
+}
+input {
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2px;
+  width: 300px;
+  height: 30px;
+  font-size: 15px;
+}
+button {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgb(214, 224, 224);
+  padding: 5px;
+  border-radius: 5px;
+}
+.label-input-div {
+  display: flex;
+  justify-content: space-between;
+}
