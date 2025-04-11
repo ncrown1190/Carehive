@@ -13,6 +13,7 @@
 .int-search-main input {
   padding: 10px;
   border-radius: 5px;
+  width: 300px;
 }
 button {
   padding: 10px;
@@ -35,7 +36,7 @@ ul {
 li {
   list-style: none;
 }
-.display-div{
-    margin: 10px;
-    border-radius: 3px; 
+.display-div {
+  margin: 10px;
+  border-radius: 3px;
 }

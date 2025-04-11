@@ -1,8 +1,12 @@
 .list-div {
   position: relative;
-  top: 60px;
+  top: 100px;
   padding: 50px;
   background-color: #f2f4f6;
+}
+.list-div h3{
+  display: flex;
+  justify-content: center;
 }
 .doctor-list-div {
   display: grid;

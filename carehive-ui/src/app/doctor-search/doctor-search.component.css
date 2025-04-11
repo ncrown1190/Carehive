@@ -1,12 +1,13 @@
 .ext-search-main {
   /* padding: 60px; */
   position: relative;
-  top: 60px;
+  top: 100px;
 }
 
 .ext-search-input {
   display: flex;
   justify-content: center;
+  /* width: 300px; */
 }
 .ext-search-input label {
   align-items: center;
@@ -15,7 +16,23 @@
 .ext-search-input input {
   padding: 5px;
   border-radius: 5px;
+  width: 300px;
+  font-size: 15px;
 }
+.ext-doc-name {
+  padding: 5px;
+}
+
+.npi-num {
+  padding: 5px;
+}
+.ext-spec {
+  padding: 5px;
+}
+.ext-address {
+  padding: 5px;
+}
+
 li {
   list-style: none;
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
