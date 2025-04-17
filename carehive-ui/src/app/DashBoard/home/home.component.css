@@ -1,0 +1,14 @@
+.greet {
+    /* position: absolute; */
+    color: rgb(5, 74, 12);  
+    font-size: 20px;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .right,
+    .greet {
+      position: relative;
+    }
+  }

@@ -11,9 +11,13 @@ import { NotificationsComponent } from './DashBoard/Patients/notifications/notif
 import { DoctorsIdComponent } from './DashBoard/Patients/doctors-id/doctors-id.component';
 import { AdminDashboardComponent } from './DashBoard/Admin/admin-dashboard/admin-dashboard.component';
 import { AddDoctorsComponent } from './DashBoard/Admin/add-doctors/add-doctors.component';
+import { LoginComponent } from './user/login/login.component';
+import { HomeComponent } from './DashBoard/home/home.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'login', component: LoginComponent},
+    { path: 'home', component: HomeComponent },
     {path:'doctorSearch', component: DoctorSearchComponent},
     {path: 'availableDoctor', component: DoctorsIdComponent},
     {path: 'patientDashboard', component: PatientDashboardComponent,

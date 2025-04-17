@@ -87,3 +87,9 @@ Values(6, 'Cardiologist');
 
 insert into Doctors(userId, Specialty)
 Values(7, 'Orthopedics');
+
+ insert into Users(UserName, LoginId, Email, passwordHash, phone, Role, Address)
+Values('Mariya Nasir', 'mariya', 'mariya@nah.com', HASHBYTES('SHA2_256','maria@123'), '676-444-2212', 'Patient', '1433 black street Detroit MI');
+
+ insert into Users(UserName, LoginId, Email, passwordHash, phone, Role, Address)
+Values('Dr. Allen Bist', 'allen', 'allen@nah.com', HASHBYTES('SHA2_256','allen123@'), '567-488-2244', 'Doctor', '1433 Field view street Detroit MI');

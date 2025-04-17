@@ -1,0 +1,11 @@
+<div class="container">
+    <div>
+        <a routerLink="doctorAppointments">Doctor Appointments</a>
+        <a routerLink="notifications" routerLinkActive="active">Notifications</a> 
+        <a class="right" routerLink="login" (click)="Logout()">Logout</a>
+    </div>
+    
+    <div><span class="greet"> Hello {{user.name}}!</span></div>
+    
+    <router-outlet></router-outlet>
+  </div>

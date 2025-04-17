@@ -15,10 +15,13 @@ namespace CarehiveAPI.Controllers
     public class DoctorsController : ControllerBase
     {
         private readonly AppointmentDbContext _context;
+        private readonly ILogger<DoctorsController> _logger;
 
-        public DoctorsController(AppointmentDbContext context)
+        public DoctorsController(AppointmentDbContext context, ILogger<DoctorsController> logger)
         {
             _context = context;
+            _logger = logger;
+
         }
 
         // GET: api/Doctors
@@ -52,16 +55,37 @@ namespace CarehiveAPI.Controllers
 
         // GET: api/Doctors/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Doctor>> GetDoctor(int id)
+        public async Task<ActionResult<DoctorResponseDTO>> GetDoctor(int id)
         {
-            var doctor = await _context.Doctors.FindAsync(id);
+            var doctor = await _context.Doctors
+                .Include(d => d.User)
+                .FirstOrDefaultAsync(d => d.DoctorId == id);
 
             if (doctor == null)
             {
                 return NotFound();
             }
 
-            return doctor;
+            var responseDto = new DoctorResponseDTO
+            {
+                DoctorId = doctor.DoctorId,
+                DoctorName = doctor.User.UserName,
+                Specialty = doctor.Specialty
+            };
+
+            return Ok(responseDto);
+
+            //var doctor = await _context.Doctors
+            //    .Where(d => d.DoctorId == id)
+            //    .Select(d => new DoctorDTO
+            //    {
+            //        DoctorId = d.DoctorId,
+            //        UserId = d.UserId,
+            //        Specialty = d.Specialty,
+            //        UserName = d.User.UserName,
+            //    }).ToListAsync();
+
+            //return Ok(doctor);
         }
 
         // PUT: api/Doctors/5
@@ -98,13 +122,45 @@ namespace CarehiveAPI.Controllers
         // POST: api/Doctors
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Doctor>> PostDoctor(Doctor doctor)
+
+        public async Task<ActionResult> PostDoctor([FromBody] DoctorCreateDTO doctorDto)
         {
-            _context.Doctors.Add(doctor);
+            //Find the user by name
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == doctorDto.DoctorName);
+
+            if (user == null)
+            {
+                return NotFound($"No user found with the name '{doctorDto.DoctorName}'.");
+            }
+            var newDoctor = new Doctor
+            {
+                //DoctorId = doctorDto.DoctorId,
+                UserId = user.UserId,
+                Specialty = doctorDto.Specialty,
+                User = user,
+            };
+
+            _context.Doctors.Add(newDoctor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDoctor", new { id = doctor.DoctorId }, doctor);
+            //build response DTO
+            var responseDto = new DoctorResponseDTO
+            {
+                DoctorId = newDoctor.DoctorId,
+                DoctorName = user.UserName,
+                Specialty = newDoctor.Specialty
+            };
+
+            return CreatedAtAction(nameof(GetDoctor), new { newDoctor.DoctorId }, responseDto);
         }
+
+        //public async Task<ActionResult<Doctor>> PostDoctor(Doctor doctor)
+        //{
+        //    _context.Doctors.Add(doctor);
+        //    await _context.SaveChangesAsync();
+
+        //    return CreatedAtAction("GetDoctor", new { id = doctor.DoctorId }, doctor);
+        //}
 
         // DELETE: api/Doctors/5
         [HttpDelete("{id}")]
