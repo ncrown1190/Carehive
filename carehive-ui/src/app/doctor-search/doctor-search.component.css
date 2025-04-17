@@ -1,7 +1,10 @@
 .ext-search-main {
   /* padding: 60px; */
   position: relative;
-  top: 100px;
+  top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ext-search-input {
@@ -28,6 +31,7 @@
 }
 .ext-spec {
   padding: 5px;
+  background-color: #19d5e3;
 }
 .ext-address {
   padding: 5px;
@@ -35,6 +39,7 @@
 
 li {
   list-style: none;
+  background-color: aliceblue;
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
   padding: 15px;
   width: 80%;
@@ -44,4 +49,9 @@ li {
 }
 .info-div {
   padding-left: 15px;
+}
+.ext-search-div{
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }

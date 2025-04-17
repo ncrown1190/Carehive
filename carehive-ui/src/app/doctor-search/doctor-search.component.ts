@@ -22,6 +22,6 @@ export class DoctorSearchComponent implements OnInit {
     this.filteredResults$ = this.searchControl.valueChanges.pipe(
       debounceTime(300),
       switchMap((searchTerm: string) => this.npiService.searchNpi(searchTerm))
-    );
+    );    
   }
 }
