@@ -1,1 +1,22 @@
-<p>add-doctors works!</p>
+<div class="container">
+    <div class="left-column">
+      <form [formGroup]="addDoctorForm" (submit)="onSubmit()">
+          <div class="label-input-div">
+              <label for="doctorName">Doctor Name: </label>
+              <input type="text" id="doctorName" formControlName="doctorName">
+              <div *ngIf="addDoctorForm.get('doctorName')?.invalid && addDoctorForm.get('doctorName')?.touched">
+                  <p>Doctor name is required</p>
+              </div>
+          </div>
+  
+          <div class="label-input-div">
+              <label for="specialty">Speciality: </label>
+              <input type="text" id="specialty" formControlName="specialty">
+              <div *ngIf="addDoctorForm.get('specialty')?.invalid && addDoctorForm.get('specialty')?.touched">
+                  <p>Speciality is required</p>
+              </div>
+          </div>
+          <button type="submit" [disabled]="addDoctorForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>

@@ -1,24 +1,9 @@
 <div class="main">
   <div class="header">
-    <img [src]="imgPath" alt="logo" />
-    <h1 class="heading">Welcome to CareHive</h1>
-    <div class="side-bar-container">
-      <!-- <i class="fa-solid fa-bars"></i> -->
-      <div class="side-bar-menu">
-        <nav>
-          <a routerLink="adminDashboard">Admin</a>
-          <a routerLink="availableDoctor">Find a Doctor</a>
-          <a routerLink="patientDashboard">Patients</a>
-          <a routerLink="doctorDashboard">Doctors</a>
-          <a routerLink="/doctorSearch">Search Doctor</a>
-        </nav>
-      </div>
+    <div class="heading">
+      <h1>Welcome to CareHive</h1>
     </div>
-  </div>
-  <div class="body">
-    <h3>Find your Doctor and make an oppintment today.</h3>
-    <div CLASS="outer-div">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+  </div> 
+  
+  <router-outlet> </router-outlet>
 </div>

@@ -1,6 +1,6 @@
 .list-div {
   position: relative;
-  top: 100px;
+  top: 15px;
   padding: 50px;
   background-color: #f2f4f6;
 }
@@ -11,7 +11,7 @@
 .doctor-list-div {
   display: grid;
   grid-template-columns: auto;
-  height: 100px;
+  height: 140px;
   border: 1px solid gray;
   margin: 10px;
 }
@@ -32,4 +32,8 @@ li {
 p {
   margin: 0px;
   padding: 5px;
+}
+.speciality{
+  background-color: #ddd563;
+  font-weight: 600;
 }

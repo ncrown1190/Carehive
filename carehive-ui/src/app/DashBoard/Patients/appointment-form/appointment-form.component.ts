@@ -16,7 +16,9 @@ export class AppointmentFormComponent {
 
   patientAppointment: CreateAppointment = {
     patientId: 0,
+    patientName: '',
     doctorId: 0,
+    doctorName: '',
     appointmentDate: '',
     appointmentTime: '',
     status: '',
@@ -26,8 +28,8 @@ export class AppointmentFormComponent {
 
   constructor(private newApiService: NewApiService){
     this.appointmentForm = this.fb.group({
-      patientId: ['', [Validators.required]],
-      doctorId: ['', [Validators.required]],
+      patientName: ['', [Validators.required]],
+      doctorName: ['', [Validators.required]],
       appointmentDate: ['', [Validators.required]],
       appointmentTime: ['', [Validators.required]],
       status:['pending'] 

@@ -1,0 +1,112 @@
+<div class="form-container-center">
+  <form #signupForm="ngForm" (ngSubmit)="CreateUser()">
+    <div>
+      <label><span class="required"></span>Name</label>
+      <input
+        type="text"
+        [(ngModel)]="user.UserName"
+        #username="ngModel"
+        name="username"
+        required
+      />
+    </div>
+    <div>
+      <label><span class="required"></span>Role</label>
+      <input
+        type="text"
+        [(ngModel)]="user.role"
+        #username="ngModel"
+        name="role"
+        required
+      />
+    </div>
+    <div>
+      <label><span class="required"></span>Email</label>
+      <input
+        type="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        name="email"
+        required
+        email
+      />
+    </div>
+    <div>
+      <label> &nbsp; Phone</label>
+      <input
+        type="text"
+        [(ngModel)]="user.phone"
+        name="phone"
+        #phone="ngModel"
+      />
+    </div>
+    <div>
+      <label><span class="required"></span>Address</label>
+      <input
+        type="text"
+        [(ngModel)]="user.address"
+        #username="ngModel"
+        name="address"
+        required
+      />
+    </div>
+    <div>
+      <label><span class="required"></span>Login Id</label>
+      <input
+        type="text"
+        [(ngModel)]="user.loginId"
+        #loginId="ngModel"
+        name="loginId"
+        required
+      />
+    </div>
+    <div>
+      <label><span class="required"></span>Password</label>
+      <input
+        type="password"
+        [(ngModel)]="user.passwordHash"
+        #password="ngModel"
+        name="password"
+        required
+      />
+    </div>
+    <div>
+      <label><span class="required"></span>Confirm Password</label>
+      <input
+        type="password"
+        name="confirmPassword"
+        #confirmPassword="ngModel"
+        ngModel
+        required
+      />
+    </div>
+
+    <p class="errors"  *ngIf="(username.touched ) && username.errors?.['required']">
+      User name is required
+    </p>
+    <p class="errors" *ngIf="(email.touched ) && email.errors?.['required']">
+      Email is required
+    </p>
+    <p class="errors" *ngIf="(email.touched ) && email.errors?.['email']">
+      Invalid email id
+    </p>
+
+    <p class="errors" *ngIf="(loginId.touched ) && loginId.errors?.['required']">
+      Login Id is required
+    </p>
+
+    <p class="errors" *ngIf ="(password.touched ) && password.errors?.['required']">
+      Password is required </p>
+
+    <p class="errors" *ngIf="(confirmPassword.touched ) && confirmPassword.errors?.['required']">
+      Re-enter Password
+    </p>
+    <p class="errors" *ngIf="confirmPassword.touched && confirmPassword.value != password.value">
+      Passwords doesnot match
+    </p>
+
+    <input type="submit" [disabled]="!signupForm.valid" />
+    <button (click)="Cancel()">Cancel</button>
+    <p>Already have an account? <a routerLink="/login">Log in </a></p>
+  </form>
+</div>

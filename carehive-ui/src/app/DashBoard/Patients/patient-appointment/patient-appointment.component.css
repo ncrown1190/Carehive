@@ -40,3 +40,12 @@ li {
   margin: 10px;
   border-radius: 3px;
 }
+
+.highlight{
+  background-color: #d1d16a;
+  font-weight: 600;
+}
+.grid{
+  display: grid;
+  grid-template-columns: auto auto;
+}

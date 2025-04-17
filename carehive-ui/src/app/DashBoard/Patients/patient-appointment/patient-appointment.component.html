@@ -13,7 +13,7 @@
       <button (click)="fetchAppointments()">Search</button>
     </div>
   </div>
-  <div *ngIf="appointments.length > 0">
+  <div *ngIf="appointments.length > 0" class="grid">
     <!-- <h3>Appointments:</h3> -->
     <div *ngFor="let appointment of appointments" class="display-div">
       <ul>
@@ -23,7 +23,7 @@
             {{ appointment.patientId }}
           </p>
           <p>Doctor: {{ appointment.doctorName }}</p>
-          <p>
+          <p class="highlight">
             Date: {{ appointment.appointmentDate }} Time:
             {{ appointment.appointmentTime }}
           </p>

@@ -1,3 +1,7 @@
+<div class="pa-div">
+  <span>Hello <strong>{{this.user.name}}!</strong></span>
+  <a class="right" routerLink="login" (click)="Logout()">Logout</a>
+</div>
 <div class="main">
   <div class="header">
     <div class="welcome">
@@ -6,10 +10,12 @@
     <div class="side-bar-container">
       <div class="side-bar-menu">
         <nav>
+          <a routerLink="availableDoctor">Doctors</a>
           <a routerLink="patientForm">New Patient Form</a>
           <a routerLink="patientappointment">Appointment </a>
+          <a routerLink="schedule">Check Schedule</a>
           <a routerLink="medical-history">View Medical History</a>
-          <a routerLink="notifications">Notifications</a>
+          <a routerLink="notifications">Notifications</a>            
           <!-- <a routerLink="doctorsId">Available Doctors</a> -->
         </nav>
       </div>

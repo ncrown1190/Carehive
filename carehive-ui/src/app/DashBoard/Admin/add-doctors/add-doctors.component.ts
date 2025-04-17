@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CreateDoctor } from '../../../models/createDoctor.model';
 import { NewApiService } from '../../../services/new-api.service';
+import { AddDoctor } from '../../../models/addDoctor.model';
 
 @Component({
   selector: 'app-add-doctors',
@@ -12,19 +13,29 @@ import { NewApiService } from '../../../services/new-api.service';
 })
 export class AddDoctorsComponent {
   addDoctorForm: FormGroup;
-  DoctorList: CreateDoctor[] = [];
+  doctorList: AddDoctor[] = [];
 
-  fb = inject(FormBuilder)
+  newDoctor: AddDoctor = {
+    userId: 0,
+    doctorName: '',
+    specialty: '',
+  };
 
-  constructor(private newApiService: NewApiService){
+  fb = inject(FormBuilder);
+
+  constructor(private newApiService: NewApiService) {
     this.addDoctorForm = this.fb.group({
-      userId: ['', [Validators.required]],
+      doctorName: ['', [Validators.required]],
       specialty: ['', [Validators.required]],
     });
   }
   onSubmit(){
     if(this.addDoctorForm.valid){
-     
+     this.newApiService.addDoctors(this.addDoctorForm.value).subscribe((data: any) => {
+      this.doctorList.push(data);
+     })
+      console.log('Form submitted', this.addDoctorForm.value);
+      this.addDoctorForm.reset();
     }
   }
 }

@@ -6,8 +6,9 @@
         <div class="picture">
           <div class="pic-div">Picture</div>
           <div class="info-doc">
-            <p>Doctor's Name: {{ doctor.userName }}</p>
-            <p>Speciality: {{ doctor.specialty }}</p>
+              <p>ID: {{doctor.doctorId}}</p>
+            <p>Doctor's Name: {{ doctor.doctorId }} {{ doctor.userName }}</p>
+            <p class="speciality">Speciality: {{ doctor.specialty }}</p>
             <p>Phone: {{ doctor.phone }}</p>
           </div>
         </div>

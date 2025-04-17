@@ -1,17 +1,23 @@
+<div class="pa-div">
+  <span>Hello <strong>{{this.user.name}}!</strong></span>
+  <a class="right" routerLink="login" (click)="Logout()">Logout</a>
+</div>
+
 <div class="main">
-  <div class="header">
-    <div class="welcome">
-      <h3>Welcome to Admin Portal</h3>
-    </div>
-    <div class="side-bar-container">
-      <div class="side-bar-menu">
-        <nav>
-          <a routerLink="addDoctors">Add Doctors</a>
-        </nav>
+    <div class="header">
+      <div class="welcome">
+        <h3>Welcome to Admin Portal</h3>
+      </div>
+      <div class="side-bar-container">
+        <div class="side-bar-menu">
+          <nav>
+            <a routerLink="addDoctors">Add Doctors</a>
+            <a routerLink="schedule">Check Schedule</a>
+          </nav>
+        </div>
       </div>
     </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
-</div>

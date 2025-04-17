@@ -1,0 +1,20 @@
+<div class="container">
+    <div>
+      <label>Doctor Name:</label>
+      <input type="text" [(ngModel)]="docName" />
+      <button (click)="getScheByDoctor()">Check Schedule</button>
+    </div>
+    <!-- <h4>Schedule Details</h4> -->
+    <h3>{{ this.docName }}</h3>
+    <div class="div-grid">
+      <div *ngFor="let schedule of schedules" class="shadow">
+        <div>
+          <p>Date: {{ schedule.scheduleDate }}</p>
+          <p class="time">
+            Time: {{ schedule.availableFrom }} -
+            {{ schedule.availableTo }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

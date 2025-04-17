@@ -1,12 +1,12 @@
-.container {
-    /* margin-top: 180px; */
+.form-container-center {
+    margin-top: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
     background-color: aliceblue;
-    height: 400px;
+    /* height: 400px; */
   }
   label {
     font-size: 20px;

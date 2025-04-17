@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../../models/user.model';
-import { UserApiService } from '../../services/user-api.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +25,7 @@ export class LoginComponent {
   message = '';
 
   constructor(
-    private userApiService: UserApiService,
+    private apiService: ApiService,
     private router: Router,
     private activeRoute: ActivatedRoute
   ) {
@@ -39,7 +39,7 @@ export class LoginComponent {
 
   userLogin(loginForm: NgForm) {
     console.log('User login called');
-    this.userApiService.getUser(this.user).subscribe({
+    this.apiService.getUser(this.user).subscribe({
       next: (data: any) => {
         this.user = data;
         localStorage.setItem('user', JSON.stringify(this.user));

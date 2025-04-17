@@ -1,10 +1,40 @@
+.pa-div {
+  margin-top: 185px;
+}
+
+span{
+  padding-left: 25px;
+}
+a:hover {
+  background-color: rgb(119, 160, 170);
+  border-radius: 15px;
+}
+.active {
+  background-color: rgb(81, 120, 143);
+  border-radius: 15px;
+  color: black;
+}
+
+.right {
+  position: absolute;
+  right: 1.5%;
+  padding: 3px;
+}
+
+.greet {
+  position: absolute;
+  color: rgb(5, 74, 12);
+
+  font-size: larger;
+  left: 45%;
+}
 .welcome {
   padding-left: 10px;
   display: flex;
   justify-content: center;
 }
 .welcome h3 {
-  margin-top: 80px;
+  /* margin-top: 80px; */
   margin-bottom: 5px;
   padding: 5px;
   color: #2b4d5f;
@@ -28,6 +58,14 @@ a {
   padding: 5px;
   background-color: #052347;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 15px;
   color: white;
 }
+
+@media only screen and (max-width: 500px) {
+  .right,
+  .greet {
+    position: relative;
+  }
+}
+
