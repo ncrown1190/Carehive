@@ -185,7 +185,9 @@ namespace CarehiveAPI.Controllers
             var appointmentcreatedto = new AppointmentDTO
             {
                 PatientId = newAppointment.PatientId,
+                PatientName = newAppointment.Patient.UserName,
                 DoctorId = newAppointment.DoctorId,
+                DoctorName = newAppointment.Doctor.User.UserName,
                 AppointmentDate = newAppointment.AppointmentDate,
                 AppointmentTime = newAppointment.AppointmentTime,
                 Status = newAppointment.Status
@@ -193,6 +195,64 @@ namespace CarehiveAPI.Controllers
 
             return CreatedAtAction(nameof(GetAppointment), new { id = newAppointment.AppointmentId }, appointmentcreatedto);
         }
+
+        [HttpPost("book-appointment")]
+        public IActionResult BookAppointment([FromBody] AppointmentCreateDTO appointmentDto)
+        {
+            // Find patient ID based on provided name
+            var patient = _context.Users.FirstOrDefault(u => u.UserName == appointmentDto.PatientName);
+            if (patient == null)
+                return BadRequest($"Patient '{appointmentDto.PatientName}' not found.");
+
+            // Find doctor ID based on provided name
+            var doctor = _context.Doctors
+                .Join(_context.Users, d => d.UserId, u => u.UserId, (d, u) => new { d, u })
+                .FirstOrDefault(x => x.u.UserName == appointmentDto.DoctorName);
+
+            if (doctor == null)
+                return BadRequest($"Doctor '{appointmentDto.DoctorName}' not found.");
+
+            // Create new appointment using retrieved IDs
+            var newAppointment = new Appointment
+            {
+                PatientId = patient.UserId,
+                DoctorId = doctor.d.DoctorId,
+                AppointmentDate = appointmentDto.AppointmentDate,
+                AppointmentTime = appointmentDto.AppointmentTime,
+                Status = "Pending"
+            };
+
+            _context.Appointments.Add(newAppointment);
+            _context.SaveChanges();
+
+            return Ok(new { Message = "Appointment booked successfully!", AppointmentId = newAppointment.AppointmentId! });
+        }
+
+        //public async Task<ActionResult<AppointmentDTO>> PostAppointment(AppointmentCreateDTO appointmentDto)
+        //{
+        //    var newAppointment = new Appointment
+        //    {
+        //        PatientId = appointmentDto.PatientId,
+        //        DoctorId = appointmentDto.DoctorId,
+        //        AppointmentDate = appointmentDto.AppointmentDate,
+        //        AppointmentTime = appointmentDto.AppointmentTime,
+        //        Status = appointmentDto.Status
+        //    };
+
+        //    _context.Appointments.Add(newAppointment);
+        //    await _context.SaveChangesAsync();
+
+        //    var appointmentcreatedto = new AppointmentDTO
+        //    {
+        //        PatientId = newAppointment.PatientId,
+        //        DoctorId = newAppointment.DoctorId,
+        //        AppointmentDate = newAppointment.AppointmentDate,
+        //        AppointmentTime = newAppointment.AppointmentTime,
+        //        Status = newAppointment.Status
+        //    };
+
+        //    return CreatedAtAction(nameof(GetAppointment), new { id = newAppointment.AppointmentId }, appointmentcreatedto);
+        //}
 
 
         // DELETE: api/Appointments/5

@@ -10,12 +10,13 @@ import { CreateDoctor } from '../models/createDoctor.model';
 })
 export class NewApiService {
   baseUrl = 'https://localhost:7115/api';
+  //https://localhost:7115/api/Appointments/book-appointment
 
   constructor(private http: HttpClient) {}
 
   createAppointment(patientInfo: CreateAppointment) {
     console.log('create user from api service', patientInfo);
-    return this.http.post(`${this.baseUrl}/Appointments`, patientInfo);
+    return this.http.post(`${this.baseUrl}/Appointments/book-appointment`, patientInfo);
   }
 
   getAllDoctorsId(): Observable<DoctorsID[]> {

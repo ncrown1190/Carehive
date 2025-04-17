@@ -1,7 +1,7 @@
 <div class="form-container-center">
   <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm)">
     <div>
-      <label><span class="span-div"></span>Login Id</label>
+      <label><span class="required" class="padd"></span>Login Id</label>
       <input
         type="text"
         [(ngModel)]="user.loginId"
@@ -23,16 +23,16 @@
     <p
       class="errors"
       *ngIf="
-                (loginId.touched ) && loginId.errors?.['required']
-              "
+              (loginId.touched ) && loginId.errors?.['required']
+            "
     >
       Login Id is required
     </p>
     <p
       class="errors"
       *ngIf="
-                (password.touched ) && password.errors?.['required']
-              "
+              (password.touched ) && password.errors?.['required']
+            "
     >
       Password is required
     </p>
@@ -42,8 +42,12 @@
     <p *ngIf="errorMessage" class="errors">
       {{ errorMessage }}
     </p>
-    <button type="submit" [disabled]="!loginForm.valid">Login</button>
-    <button type="button" (click)="Cancel(loginForm)">Cancel</button>
-    <p>Not a registered user? <a routerLink="/signup">Sign up now</a></p>
+    <div class="btn">
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+      <button type="button" (click)="Cancel(loginForm)">Cancel</button>
+    </div>
+    
+    <p class="signup">Not a registered user? <a routerLink="/signup">Sign up now</a></p>
   </form>
 </div>
+

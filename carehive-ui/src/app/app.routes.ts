@@ -15,7 +15,6 @@ import { AddDoctorsComponent } from './DashBoard/Admin/add-doctors/add-doctors.c
 import { DoctorScheduleComponent } from './doctor-schedule/doctor-schedule.component';
 import { SignupComponent } from './user/signup/signup.component';
 
-
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -47,7 +46,8 @@ export const routes: Routes = [
         component: NotificationsComponent,
       },
       {
-        path: 'schedule', component: DoctorScheduleComponent
+        path: 'schedule',
+        component: DoctorScheduleComponent,
       },
     ],
   },
@@ -60,26 +60,43 @@ export const routes: Routes = [
         component: DoctorAppointListComponent,
       },
       {
+        path: 'medical-history',
+        component: MedicalHistoryComponent,
+      },
+      {
         path: 'notifications',
         component: NotificationsComponent,
       },
       {
-        path: 'schedule', component: DoctorScheduleComponent
+        path: 'schedule',
+        component: DoctorScheduleComponent,
       },
     ],
   },
   //{ path: 'patientDashboard', component: PatientDashboardComponent },
-  {path: 'adminDashboard', component: AdminDashboardComponent,
+  {
+    path: 'adminDashboard',
+    component: AdminDashboardComponent,
     children: [
-        {
-            path: 'addDoctors', component: AddDoctorsComponent
-        },
-        {
-          path: 'schedule', component: DoctorScheduleComponent
-        },
-        // {
-        //     path: 'doctors-list', component: DoctorListComponent
-        // },
-    ]
- }
+      {
+        path: 'addDoctors',
+        component: AddDoctorsComponent,
+      },
+      {
+        path: 'schedule',
+        component: DoctorScheduleComponent,
+      },
+      {
+        path: 'patientForm',
+        component: AppointmentFormComponent,
+      },
+      {
+        path: 'notifications',
+        component: NotificationsComponent,
+      },
+      // {
+      //     path: 'doctors-list', component: DoctorListComponent
+      // },
+    ],
+  },
 ];

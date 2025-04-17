@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-doctor-schedule',
   imports: [CommonModule, FormsModule],
   templateUrl: './doctor-schedule.component.html',
-  styleUrl: './doctor-schedule.component.css'
+  styleUrl: './doctor-schedule.component.css',
 })
 export class DoctorScheduleComponent {
   docName: string = '';
@@ -26,12 +26,11 @@ export class DoctorScheduleComponent {
         .subscribe((data: any) => {
           this.schedules = data;
         });
-      this.showSearch = false;
+      this.docName = '';
     }
   }
 
-  toggleSearch() {
-    this.showSearch = !this.showSearch; // Toggles visibility
-  }
-
+  // toggleSearch() {
+  //   this.showSearch = !this.showSearch; // Toggles visibility
+  // }
 }

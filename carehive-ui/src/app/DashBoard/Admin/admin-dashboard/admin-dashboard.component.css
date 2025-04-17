@@ -1,6 +1,17 @@
-.pa-div {
-  margin-top: 185px;
+
+.login-p {
+  margin-top: 155px;
+  display: flex;
+  justify-content: space-between;
 }
+.pa-div{
+  padding-left: 25px;
+  padding-top: 5px;
+  font-size: 17px;
+}
+.main{
+  margin-top: -60px;
+  }
 span{
   padding-left: 25px;
 }
@@ -21,8 +32,7 @@ span{
   }
   .greet {
     position: absolute;
-    color: rgb(5, 74, 12);
-  
+    color: rgb(5, 74, 12);  
     font-size: larger;
     left: 45%;
   }
@@ -50,6 +60,7 @@ span{
   a {
     display: flex;
     justify-content: stretch;
+    justify-content: center;
     margin: 5px;
     text-decoration: none;
     border: 1px solid #052347;

@@ -3,18 +3,18 @@
 
 <form [formGroup]="appointmentForm" (submit)="onSubmit()">
     <div class="label-input-div">
-        <label for="patientId">Patient Id: </label>
-        <input type="number" id="patientId" formControlName="patientId">
-        <div *ngIf="appointmentForm.get('patientId')?.invalid && appointmentForm.get('patientId')?.touched">
-            <p>Patient Id is required</p>
+        <label for="patientName">Patient Name: </label>
+        <input type="text" id="patientName" formControlName="patientName">
+        <div *ngIf="appointmentForm.get('patientName')?.invalid && appointmentForm.get('patientName')?.touched">
+            <p>Patient name is required</p>
         </div>
     </div>
 
     <div class="label-input-div">
-        <label for="doctorId">Doctor Id: </label>
-        <input type="number" id="doctorId" formControlName="doctorId">
-        <div *ngIf="appointmentForm.get('doctorId')?.invalid && appointmentForm.get('doctorId')?.touched">
-            <p>Doctor Id is required</p>
+        <label for="doctorName">Doctor Name: </label>
+        <input type="text" id="doctorName" formControlName="doctorName">
+        <div *ngIf="appointmentForm.get('doctorName')?.invalid && appointmentForm.get('doctorName')?.touched">
+            <p>Doctor name is required</p>
         </div>
     </div>
 

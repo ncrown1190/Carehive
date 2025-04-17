@@ -1,6 +1,17 @@
-.pa-div {
-  margin-top: 180px;
+.login-p {
+  margin-top: 155px;
+  display: flex;
+  justify-content: space-between;
 }
+.pa-div{
+  padding-left: 25px;
+  padding-top: 5px;
+  font-size: 17px;
+  color: green;
+}
+.main{
+  margin-top: -60px;
+  }
 
 span {
   padding-left: 25px;
@@ -52,6 +63,7 @@ nav {
 a {
   display: flex;
   justify-content: stretch;
+  justify-content: center;
   margin: 5px;
   text-decoration: none;
   border: 1px solid #052347;

@@ -1,6 +1,8 @@
-<div class="pa-div">
-  <span>Hello <strong>{{this.user.name}}!</strong></span>
-  <a class="right" routerLink="login" (click)="Logout()">Logout</a>
+<div>
+  <p class="login-p">
+    <strong class="pa-div">{{ this.user.name }}</strong
+    ><a routerLink="login" (click)="Logout()">Logout</a>
+  </p>
 </div>
 
 <div class="main">
@@ -14,6 +16,7 @@
             <a routerLink="doctor-appointment">Appointments</a>
             <a routerLink="notifications">Notifications</a>
             <a routerLink="schedule">Check Schedule</a>
+            <a routerLink="medical-history">View Medical History</a>
           </nav>
         </div>
       </div>
