@@ -4,8 +4,9 @@
   justify-content: center;
   align-items: center;
   padding-top: 20px;
-    background-color: aliceblue;
-    height: 400px;
+  /* background-color: aliceblue; */
+  background-color: #c8e2f675;
+  height: 400px;
 }
 label {
   font-size: 20px;

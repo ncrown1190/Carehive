@@ -11,7 +11,7 @@
 </div>
 <div *ngIf="appointments.length > 0" class="doc-app-list">
   <h4>Doctor {{this.doctorName}}'s Appointments List:</h4>
-  <div *ngFor="let appointment of appointments">
+  <div *ngFor="let appointment of appointments" class="doc-appoint">
     <ul>
       <li>
         <p>

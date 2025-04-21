@@ -1,6 +1,7 @@
 <div class="form-container-center">
+  <h2>Please Register here</h2>
   <form #signupForm="ngForm" (ngSubmit)="CreateUser()">
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Name</label>
       <input
         type="text"
@@ -10,7 +11,7 @@
         required
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Role</label>
       <input
         type="text"
@@ -20,7 +21,7 @@
         required
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Email</label>
       <input
         type="email"
@@ -31,7 +32,7 @@
         email
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label> &nbsp; Phone</label>
       <input
         type="text"
@@ -40,7 +41,7 @@
         #phone="ngModel"
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Address</label>
       <input
         type="text"
@@ -50,7 +51,7 @@
         required
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Login Id</label>
       <input
         type="text"
@@ -60,7 +61,7 @@
         required
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Password</label>
       <input
         type="password"
@@ -70,7 +71,7 @@
         required
       />
     </div>
-    <div>
+    <div class="label-input-div">
       <label><span class="required"></span>Confirm Password</label>
       <input
         type="password"
@@ -105,8 +106,8 @@
       Passwords doesnot match
     </p>
 
-    <input type="submit" [disabled]="!signupForm.valid" />
+    <input type="submit" [disabled]="!signupForm.valid" class="submit-inp"/>
     <button (click)="Cancel()">Cancel</button>
-    <p>Already have an account? <a routerLink="/login">Log in </a></p>
+    <p class="signup">Already have an account? <a routerLink="/login" class="signup-route">Log in </a></p>
   </form>
 </div>

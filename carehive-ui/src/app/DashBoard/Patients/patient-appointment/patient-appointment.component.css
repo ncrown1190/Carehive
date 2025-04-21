@@ -30,7 +30,8 @@ ul {
   padding-top: 10px;
   display: grid;
   grid-template-columns: auto;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-color: #c8e2f675;
   padding-right: 25px;
 }
 li {

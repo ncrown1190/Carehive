@@ -41,6 +41,10 @@ button:hover {
   padding-top: 25px;
   padding-bottom: 10px;
 }
+.doc-appoint{
+  background-color: #c8e2f675;
+  font-size: 20px;
+}
 ul {
   margin: 5px;
   display: grid;
