@@ -3,9 +3,9 @@
   top: 15px;
   padding: 50px;
   /* background-color: #f2f4f6; */
-  background-color: #c8e2f675;
+  /* background-color: #c8e2f675; */
 }
-.list-div h3{
+.list-div h2{
   display: flex;
   justify-content: center;
 }
@@ -37,4 +37,12 @@ p {
 .speciality{
   background-color: #ddd563;
   font-weight: 600;
+}
+.doc-name{
+  color: rgb(42, 125, 225);
+    font-size: 20px;
+    font-weight: 550;
+}
+a{
+  text-decoration: none;
 }

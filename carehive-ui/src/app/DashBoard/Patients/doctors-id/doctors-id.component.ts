@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DoctorsID } from '../../../models/doctorsId.model';
 import { NewApiService } from '../../../services/new-api.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-doctors-id',

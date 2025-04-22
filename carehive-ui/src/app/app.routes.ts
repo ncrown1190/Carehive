@@ -15,12 +15,14 @@ import { AddDoctorsComponent } from './DashBoard/Admin/add-doctors/add-doctors.c
 import { DoctorScheduleComponent } from './doctor-schedule/doctor-schedule.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { DoctorSearchComponent } from './doctor-search/doctor-search.component';
+import { DoctorInfoComponent } from './doctor-info/doctor-info.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomeComponent },  
+  { path: 'home', component: HomeComponent },
+  { path: 'doctorprofile', component: DoctorInfoComponent},
   {
     path: 'patientDashboard',
     component: PatientDashboardComponent,
@@ -73,8 +75,8 @@ export const routes: Routes = [
         component: DoctorScheduleComponent,
       },
       {
-        path: 'external', 
-        component: DoctorSearchComponent
+        path: 'external',
+        component: DoctorSearchComponent,
       },
     ],
   },
@@ -100,8 +102,8 @@ export const routes: Routes = [
         component: NotificationsComponent,
       },
       {
-        path: 'external', 
-        component: DoctorSearchComponent
+        path: 'external',
+        component: DoctorSearchComponent,
       },
       // {
       //     path: 'doctors-list', component: DoctorListComponent

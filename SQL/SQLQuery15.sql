@@ -96,3 +96,6 @@ Values('Dr. Allen Bist', 'allen', 'allen@nah.com', HASHBYTES('SHA2_256','allen12
 
 insert into Users(UserName, LoginId, Email, passwordHash, phone, Role, Address)
 Values('Andrea Tim', 'Andrea', 'andrea@nah.com', HASHBYTES('SHA2_256','andrea@123'), '554-433-7788', 'Admin', '456 Green St Detroit MI');
+
+insert into Users(UserName, LoginId, Email, passwordHash, phone, Role, Address)
+Values('David Montu', 'Montu', 'montu@gmail.com', HASHBYTES('SHA2_256','montu@123'), '556-678-9923', 'Patient', 'Westland MI');

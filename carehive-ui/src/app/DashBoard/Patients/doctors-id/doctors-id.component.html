@@ -1,16 +1,19 @@
 <div class="list-div">
-  <h3>List of available doctors</h3>
+  <h2>List of available doctors</h2>
   <div *ngFor="let doctor of doctors" class="doctor-list-div">
     <ul>
       <li>
         <div class="picture">
-          <div class="pic-div">Picture</div>
+          <!-- <div class="pic-div">Picture</div> -->
           <div class="info-doc">
-              <p>ID: {{doctor.doctorId}}</p>
-            <p>Doctor's Name: {{ doctor.doctorId }} {{ doctor.userName }}</p>
+            <p class="doc-name">
+              <a href="/doctorprofile">{{ doctor.userName }}</a>
+            </p>
+            <p>ID: {{ doctor.doctorId }}</p>
             <p class="speciality">Speciality: {{ doctor.specialty }}</p>
             <p>Phone: {{ doctor.phone }}</p>
           </div>
+          <!-- <div><a href=" {{'tel:' + doctor.phone}}">Make an Appointment</a></div> -->
         </div>
 
         <!-- <p>

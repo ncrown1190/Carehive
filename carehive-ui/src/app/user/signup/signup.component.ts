@@ -42,7 +42,7 @@ export class SignupComponent {
         this.errorMessage = error.error;
         //console.log('Error creating user', error);
       },
-    });
+    });    
   }
 
   Cancel() {
