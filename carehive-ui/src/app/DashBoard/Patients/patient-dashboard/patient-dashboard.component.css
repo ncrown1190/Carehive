@@ -10,7 +10,8 @@
 .pa-div {
   padding-left: 25px;
   padding-top: 5px;
-  font-size: 17px;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
 }
 .main {
   margin-top: -60px;
@@ -43,8 +44,10 @@ a:hover {
 }
 .welcome h3 {
   /* margin-top: 80px; */
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 5px;
   padding: 5px;
+  font-size: 25px;
   color: #2b4d5f;
 }
 nav {
@@ -67,8 +70,9 @@ a {
   padding: 5px;
   background-color: #052347;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   color: white;
+  font-family: "Montserrat", sans-serif;
 }
 
 

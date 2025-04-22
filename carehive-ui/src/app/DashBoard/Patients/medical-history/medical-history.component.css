@@ -10,6 +10,7 @@
     margin: 0;
     font-size: 30px;
     font-weight: 600;
+    font-family: "Montserrat", sans-serif;
 }
 
 
@@ -19,6 +20,7 @@
     font-size: 15px;
     padding: 16px 20px;
     border-bottom: 1px solid #0f0e0e;
+    font-family: "Montserrat", sans-serif
 }
 
 
@@ -50,12 +52,14 @@
     margin: 0;
     font-size: 18px;
     font-weight: 600;
+    font-family: "Montserrat", sans-serif;
 }
 
 
 .timestamp{
     font-size: 14px;
     color: #525151;
+    font-family: "Montserrat", sans-serif;
 }
 
 
@@ -64,6 +68,7 @@
     line-height: 1.5;
     font-size: 14px;
     color: #444;
+    font-family: "Montserrat", sans-serif;
 }
 
 
@@ -90,6 +95,7 @@
     cursor: pointer;
     background-color: #0a2342;
     color: #dfe0e2;
+    font-family: "Montserrat", sans-serif;
   }
   .action-button:hover {
     background-color: #188fa7;

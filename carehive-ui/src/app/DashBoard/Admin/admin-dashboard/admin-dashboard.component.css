@@ -48,6 +48,7 @@ span{
     margin-bottom: 5px;
     padding: 5px;
     color: #2b4d5f;
+    font-family: "Montserrat", sans-serif
   }
   nav {
     display: flex;
@@ -69,8 +70,9 @@ span{
     padding: 5px;
     background-color: #052347;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
     color: white;
+    font-family: "Montserrat", sans-serif
   }
   
   @media only screen and (max-width: 500px) {
