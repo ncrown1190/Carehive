@@ -30,6 +30,7 @@ export const routes: Routes = [
       {
         path: 'patientappointment',
         component: PatientAppointmentComponent,
+        canActivate: [authGuard],
       },
       {
         path: 'patientForm',
@@ -42,7 +43,7 @@ export const routes: Routes = [
 
       {
         path: 'medical-history',
-        component: MedicalHistoryComponent,
+        component: MedicalHistoryComponent, 
       },
       {
         path: 'notifications',
@@ -85,6 +86,10 @@ export const routes: Routes = [
     path: 'adminDashboard',
     component: AdminDashboardComponent,
     children: [
+      {
+        path: 'availableDoctor',
+        component: DoctorsIdComponent,
+      },
       {
         path: 'addDoctors',
         component: AddDoctorsComponent,

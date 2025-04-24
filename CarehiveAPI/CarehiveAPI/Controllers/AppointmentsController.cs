@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CarehiveAPI.Entities;
 using CarehiveAPI.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarehiveAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AppointmentsController : ControllerBase

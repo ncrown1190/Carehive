@@ -1,11 +1,12 @@
 <div class="container">
+  <h3>{{this.docName}}</h3>
     <div>
       <label>Doctor Name:</label>
-      <input type="text" [(ngModel)]="docName" />
+      <input type="text" [(ngModel)]="docName"  />
       <button (click)="getScheByDoctor()">Check Schedule</button>
     </div>
     <!-- <h4>Schedule Details</h4> -->
-    <h3>{{ this.docName }}</h3>
+    <br>
     <div class="div-grid">
       <div *ngFor="let schedule of schedules" class="shadow">
         <div>

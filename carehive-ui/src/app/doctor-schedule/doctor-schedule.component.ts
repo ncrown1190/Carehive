@@ -26,9 +26,11 @@ export class DoctorScheduleComponent {
         .subscribe((data: any) => {
           this.schedules = data;
         });
-      this.docName = '';
+       //this.docName = '';
     }
+    
   }
+  
 
   // toggleSearch() {
   //   this.showSearch = !this.showSearch; // Toggles visibility

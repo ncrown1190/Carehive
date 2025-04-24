@@ -4,6 +4,7 @@ import { debounceTime, Observable, switchMap } from 'rxjs';
 import { DoctorsData } from '../models/doctor.model';
 import { NpiService } from '../services/npi.service';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-doctor-search',
@@ -16,12 +17,14 @@ export class DoctorSearchComponent implements OnInit {
   filteredResults$: Observable<any[]> | undefined;
   query: string = '';
   results: DoctorsData[] = [];
+  url: any;
 
-  constructor(private npiService: NpiService) {}
+  constructor(private npiService: NpiService, private domSanitizer: DomSanitizer) {}
   ngOnInit() {
     this.filteredResults$ = this.searchControl.valueChanges.pipe(
       debounceTime(300),
       switchMap((searchTerm: string) => this.npiService.searchNpi(searchTerm))
     );    
   }
+
 }
