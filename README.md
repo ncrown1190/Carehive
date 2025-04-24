@@ -1,1 +1,5 @@
 ![WebView](carehive-ui/src/assets/images/pic1.png)
+![WebView](carehive-ui/src/assets/images/pic2.png)
+![WebView](carehive-ui/src/assets/images/pic4.png)
+![WebView](carehive-ui/src/assets/images/pic5.png)
+![WebView](carehive-ui/src/assets/images/pic9.png)
