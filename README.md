@@ -1,1 +1,1 @@
-![WebView](./CareHive/src/assets/images/pic1.png)
+![WebView](carehive-ui/src/assets/images/pic1.png)
